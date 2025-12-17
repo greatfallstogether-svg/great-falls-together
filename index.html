@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Great Falls Together</title>
+  <meta name="description" content="Safer streets. Stronger community." />
+  <style>
+    :root { --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --muted:#475569; --border:#e2e8f0; }
+    body { margin:0; font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+           background: linear-gradient(#f8fafc, #fff, #f8fafc); color:var(--text); }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 18px; }
+    .top { position: sticky; top: 0; background: rgba(255,255,255,.85); backdrop-filter: blur(10px);
+           border-bottom: 1px solid var(--border); }
+    .topbar { display:flex; justify-content:space-between; align-items:center; gap:12px; padding: 10px 18px; }
+    .brand { display:flex; gap:10px; align-items:center; }
+    .logo { width:38px; height:38px; border:1px solid var(--border); border-radius:14px; background:#fff; }
+    .title { font-weight:700; font-size:14px; line-height:1.1; }
+    .tag { font-size:12px; color:var(--muted); margin-top:2px; }
+    .btn { display:inline-block; padding:10px 14px; border-radius:14px; font-weight:700; font-size:14px; text-decoration:none; }
+    .btn.primary { background:#0f172a; color:#fff; }
+    .btn.ghost { border:1px solid var(--border); background:#fff; color:#0f172a; }
+    .hero { padding: 28px 0 10px; display:grid; gap:16px; grid-template-columns: 1.1fr .9fr; }
+    @media (max-width: 860px){ .hero { grid-template-columns: 1fr; } .topbar{padding:10px 12px;} }
+    h1 { font-size: 44px; margin: 0; letter-spacing: -.02em; }
+    @media (max-width: 420px){ h1 { font-size: 34px; } }
+    p { margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: var(--muted); }
+    .card { border:1px solid var(--border); background: var(--card); border-radius: 20px; padding: 16px; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .chips { margin-top: 14px; display:flex; flex-wrap:wrap; gap:10px; }
+    .chip { border:1px solid var(--border); border-radius: 16px; padding:8px 10px; font-size: 13px; color: var(--muted); background:#fff; }
+    .grid { margin-top: 16px; display:grid; gap:12px; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 860px){ .grid { grid-template-columns: 1fr; } }
+    .pill h3 { margin:0; font-size: 16px; }
+    .pill p { margin-top:6px; font-size: 14px; }
+    .cta { margin: 26px 0 10px; background:#0f172a; color:#fff; border-radius: 22px; padding: 18px; }
+    .cta p { color: rgba(255,255,255,.8); margin-top:8px; }
+    .row { display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px; }
+    input { flex: 1; min-width: 220px; padding: 12px 12px; border-radius: 14px; border:1px solid rgba(255,255,255,.25);
+            background: rgba(255,255,255,.1); color:#fff; font-size:14px; outline: none; }
+    input::placeholder { color: rgba(255,255,255,.65); }
+    button { padding: 12px 14px; border-radius: 14px; border: none; font-weight: 800; font-size: 14px; }
+    .foot { border-top:1px solid var(--border); margin-top: 18px; padding: 14px 0 24px; color: var(--muted); font-size: 13px; display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+    .links a { color: var(--muted); text-decoration: underline; margin-left: 10px; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="wrap topbar">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <div class="title">Great Falls Together</div>
+          <div class="tag">Safer streets. Stronger community.</div>
+        </div>
+      </div>
+      <a class="btn primary" href="#signup">Get updates</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <h1>A safer, more connected Great Falls—built together.</h1>
+        <p>
+          Great Falls Together is a resident-led community group focused on practical improvements that help families,
+          seniors, and neighbors of all ages move around safely and confidently—without changing what people love about
+          Great Falls.
+        </p>
+        <div class="row" style="margin-top:16px;">
+          <a class="btn ghost" href="#support">What we support</a>
+          <a class="btn primary" href="#signup">Join the mailing list</a>
+        </div>
+        <div class="chips">
+          <div class="chip">Safety-first</div>
+          <div class="chip">Sidewalks & crossings</div>
+          <div class="chip">Trails & connections</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; gap:10px;">
+          <div>
+            <div style="font-weight:700; font-size:13px; color:var(--muted);">Our focus</div>
+            <div style="font-weight:800; font-size:22px; margin-top:4px;">Practical, safety-based progress</div>
+            <p style="margin-top:10px;">Clear priorities. Calm tone. Consistent follow-through.</p>
+          </div>
+          <div class="logo" style="background:#f1f5f9;"></div>
+        </div>
+
+        <div class="card" style="margin-top:14px; background:#f8fafc;">
+          <div style="font-weight:800; font-size:14px;">What you can expect</div>
+          <ul style="margin:10px 0 0 18px; color:var(--muted); font-size:14px; line-height:1.6;">
+            <li>Short, useful updates (not spam)</li>
+            <li>Meeting reminders and action steps</li>
+            <li>Requests for resident input where it matters</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <div style="font-weight:800; font-size:14px;">Contact</div>
+          <div style="margin-top:8px; font-size:14px;">
+            <a href="mailto:greatfallstogether@gmail.com" style="text-decoration:underline; color:var(--text);">
+              greatfallstogether@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="support" style="padding-top:10px;">
+      <h2 style="font-size:28px; margin: 18px 0 0;">What we support</h2>
+      <p style="max-width:680px;">Common-sense improvements that keep Great Falls livable, safe, and connected.</p>
+
+      <div class="grid">
+        <div class="card pill">
+          <h3>Safe sidewalks & crossings</h3>
+          <p>Fill gaps, improve crossings, and make walking safer—especially near schools and community destinations.</p>
+        </div>
+        <div class="card pill">
+          <h3>Connected trails & bike routes</h3>
+          <p>Connect neighborhoods to the Village and parks with practical, family-friendly links.</p>
+        </div>
+        <div class="card pill">
+          <h3>Safety-driven transportation planning</h3>
+          <p>Support improvements that reduce conflict points and make driving patterns safer and more predictable.</p>
+        </div>
+        <div class="card pill">
+          <h3>Access to everyday services</h3>
+          <p>Help residents access essentials locally—without long trips for basic needs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="signup" class="cta">
+      <div style="display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+        <div>
+          <div style="font-size:28px; font-weight:900;">Get updates</div>
+          <p>Join the mailing list for short updates, meeting reminders, and clear ways to help.</p>
+        </div>
+      </div>
+
+      <!-- Simple email capture: for now it just opens an email to you -->
+      <form onsubmit="window.location.href='mailto:greatfallstogether@gmail.com?subject=Sign%20me%20up%20for%20updates&body=Name:%20%0AEmail:%20'; return false;">
+        <div class="row">
+          <input type="email" placeholder="Email address" required />
+          <button type="submit">Sign up</button>
+        </div>
+      </form>
+
+      <div style="margin-top:10px; font-size:12px; color: rgba(255,255,255,.75);">
+        Prefer email? Write us at <a href="mailto:greatfallstogether@gmail.com" style="color:#fff; text-decoration:underline;">greatfallstogether@gmail.com</a>.
+      </div>
+    </section>
+
+    <div class="foot">
+      <div>© <span id="y"></span> Great Falls Together</div>
+      <div class="links">
+        <a href="#support">What we support</a>
+        <a href="#signup">Get updates</a>
+      </div>
+    </div>
+  </div>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
