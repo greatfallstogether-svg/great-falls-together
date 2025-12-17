@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Great Falls Together</title>
-  <meta name="description" content="Safer streets. Stronger community." />
+  <title>Great Falls Together | Great Falls, Virginia</title>
+  <meta name="description" content="Great Falls Together is a resident-led group in Great Falls, Virginia focused on safer streets, sidewalks, trails, and a stronger Great Falls Village." />
+
   <style>
     :root {
       --bg:#f8fafc;
@@ -13,7 +14,7 @@
       --muted:#475569;
       --border:#e2e8f0;
 
-      /* Theme accents (Great Falls feel) */
+      /* Great Falls theme */
       --accent:#14532d;        /* deep green */
       --accent-2:#1e293b;      /* slate */
       --accent-soft:#dcfce7;   /* soft green */
@@ -22,42 +23,60 @@
     * { box-sizing: border-box; }
     body {
       margin:0;
-      font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: linear-gradient(var(--bg), #fff, var(--bg));
+      font-family:-apple-system,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:linear-gradient(var(--bg), #fff, var(--bg));
       color:var(--text);
     }
 
+    a { color: inherit; }
+
     .wrap { max-width: 980px; margin: 0 auto; padding: 18px; }
 
+    /* Top bar */
     .top {
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(255,255,255,.85);
+      background: rgba(255,255,255,.88);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
-    .topbar { display:flex; justify-content:space-between; align-items:center; gap:12px; padding: 10px 18px; }
+    .topbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding: 10px 18px;
+    }
+    @media (max-width: 860px){ .topbar{ padding: 10px 12px; } }
 
-    .brand { display:flex; gap:10px; align-items:center; }
-    .logo {
+    .brand { display:flex; gap:10px; align-items:center; min-width: 0; }
+    .mark {
       width:38px; height:38px;
       border:1px solid var(--border);
       border-radius:14px;
       background:
         radial-gradient(circle at 30% 30%, var(--accent-soft), #fff 60%),
         linear-gradient(135deg, rgba(20,83,45,.18), rgba(30,41,59,.10));
+      flex: 0 0 auto;
     }
-    .title { font-weight:800; font-size:14px; line-height:1.1; }
-    .tag { font-size:12px; color:var(--muted); margin-top:2px; }
 
-    a { color: inherit; }
+    .brandText { min-width:0; }
+    .title { font-weight:900; font-size:14px; line-height:1.1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .tag { font-size:12px; color:var(--muted); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:flex; gap:8px; align-items:center; }
+    .vaFlag {
+      height: 14px;
+      width: auto;
+      border-radius: 2px;
+      border: 1px solid rgba(0,0,0,.08);
+      flex: 0 0 auto;
+    }
 
     .btn {
       display:inline-block;
       padding:10px 14px;
       border-radius:14px;
-      font-weight:800;
+      font-weight:900;
       font-size:14px;
       text-decoration:none;
       line-height: 1;
@@ -68,6 +87,7 @@
     .btn.ghost { border:1px solid var(--border); background:#fff; color:var(--text); }
     .btn.ghost:hover { background:#f8fafc; }
 
+    /* Hero */
     .hero {
       margin-top: 14px;
       border-radius: 24px;
@@ -75,31 +95,31 @@
       border: 1px solid var(--border);
       box-shadow: 0 2px 8px rgba(0,0,0,.04);
 
-      /* HERO IMAGE (Public Domain NPS – stable direct file) */
+      /* Great Falls Park hero image (Wikimedia) */
       background:
-        linear-gradient(rgba(15,23,42,.58), rgba(15,23,42,.58)),
+        linear-gradient(rgba(15,23,42,.62), rgba(15,23,42,.62)),
         url('https://upload.wikimedia.org/wikipedia/commons/c/cd/Two_Views_of_Waterfalls_and_Rapids_at_Great_Falls_Park%2C_Virginia_%284f6dd8a5-9ff6-4a59-9b65-87ab30762493%29.jpg');
       background-size: cover;
       background-position: center;
 
-      padding: 28px;
+      padding: 26px;
       color: #fff;
+
       display: grid;
       gap: 16px;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: 1.15fr .85fr;
     }
-
     @media (max-width: 860px){
       .hero { grid-template-columns: 1fr; padding: 18px; }
-      .topbar{padding:10px 12px;}
     }
 
-    h1 { font-size: 44px; margin: 0; letter-spacing: -.02em; }
-    @media (max-width: 420px){ h1 { font-size: 34px; } }
+    h1 { font-size: 40px; margin: 0; letter-spacing: -.02em; }
+    @media (max-width: 420px){ h1 { font-size: 32px; } }
 
     p { margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: var(--muted); }
-    .hero p { color: rgba(255,255,255,.88); }
+    .hero p { color: rgba(255,255,255,.90); }
 
+    /* Cards */
     .card {
       border:1px solid var(--border);
       background: var(--card);
@@ -108,21 +128,20 @@
       box-shadow: 0 1px 2px rgba(0,0,0,.04);
       color: var(--text);
     }
-
-    .hero .card {
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(6px);
-    }
+    .hero .card { background: rgba(255,255,255,.92); backdrop-filter: blur(6px); }
 
     .chips { margin-top: 14px; display:flex; flex-wrap:wrap; gap:10px; }
     .chip {
-      border:1px solid rgba(255,255,255,.28);
+      border:1px solid rgba(255,255,255,.30);
       border-radius: 16px;
       padding:8px 10px;
       font-size: 13px;
-      color: rgba(255,255,255,.9);
+      color: rgba(255,255,255,.92);
       background: rgba(255,255,255,.10);
     }
+
+    .section-title { font-size: 28px; margin: 22px 0 0; letter-spacing: -.01em; }
+    .section-sub { max-width: 760px; color: var(--muted); }
 
     .grid { margin-top: 16px; display:grid; gap:12px; grid-template-columns: 1fr 1fr; }
     @media (max-width: 860px){ .grid { grid-template-columns: 1fr; } }
@@ -130,19 +149,37 @@
     .pill h3 { margin:0; font-size: 16px; }
     .pill p { margin-top:6px; font-size: 14px; color: var(--muted); }
 
-    .section-title { font-size:28px; margin: 22px 0 0; letter-spacing: -.01em; }
-    .section-sub { max-width:680px; color: var(--muted); }
-
     /* Photo cards */
     .photo-card img{
       width:100%;
-      height: 260px;
+      height: 240px;
       object-fit: cover;
       border-radius:16px;
       display:block;
-      background: #f1f5f9;
+      background:#f1f5f9;
     }
     .photo-card p { margin-top:10px; font-size:14px; }
+
+    /* Village explainer */
+    .callout {
+      border: 1px solid rgba(20,83,45,.18);
+      background: linear-gradient(180deg, rgba(220,252,231,.6), rgba(255,255,255,.95));
+    }
+    .badgeRow { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+    .badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: #14532d;
+      background: rgba(220,252,231,.7);
+      border: 1px solid rgba(20,83,45,.18);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+    .badge.gray{
+      color:#334155;
+      background:#f1f5f9;
+      border:1px solid var(--border);
+    }
 
     /* CTA */
     .cta {
@@ -156,7 +193,6 @@
     }
     .cta p { color: rgba(255,255,255,.85); margin-top:8px; }
     .row { display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px; }
-
     input {
       flex: 1;
       min-width: 220px;
@@ -170,7 +206,6 @@
     }
     input::placeholder { color: rgba(255,255,255,.70); }
     input:focus { border-color: rgba(255,255,255,.45); }
-
     button {
       padding: 12px 14px;
       border-radius: 14px;
@@ -182,6 +217,7 @@
     }
     button:hover { opacity: .92; cursor: pointer; }
 
+    /* Footer */
     .foot {
       border-top:1px solid var(--border);
       margin-top: 18px;
@@ -196,7 +232,6 @@
     .links a { color: var(--muted); text-decoration: underline; margin-left: 10px; }
 
     .credits {
-      width: 100%;
       margin-top: 10px;
       font-size: 12px;
       color: var(--muted);
@@ -205,164 +240,184 @@
     .credits a { text-decoration: underline; }
   </style>
 </head>
+
 <body>
-  <div class="top">
+  <header class="top">
     <div class="wrap topbar">
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
+        <div class="mark" aria-hidden="true"></div>
+        <div class="brandText">
           <div class="title">Great Falls Together</div>
-          <div class="tag">Safer streets. Stronger community.</div>
+          <div class="tag">
+            <img class="vaFlag"
+                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Flag_of_Virginia.svg/320px-Flag_of_Virginia.svg.png"
+                 alt="Virginia flag" />
+            Great Falls, Virginia • Safer streets. Stronger community.
+          </div>
         </div>
       </div>
       <a class="btn primary" href="#signup">Get updates</a>
     </div>
-  </div>
+  </header>
 
-  <div class="wrap">
-    <!-- HERO -->
+  <main class="wrap">
     <section class="hero">
       <div>
-        <h1>A safer, more connected Great Falls—built together.</h1>
+        <h1>A safer, more connected Great Falls, Virginia—built together.</h1>
         <p>
-          Great Falls Together is a resident-led community group focused on practical improvements that help families,
-          seniors, and neighbors of all ages move around safely and confidently—without changing what people love about
-          Great Falls.
+          Great Falls Together is a resident-led community group in <strong>Great Falls, Virginia</strong>,
+          focused on practical improvements that help families, seniors, and neighbors of all ages move safely between
+          neighborhoods, schools, parks, and <strong>Great Falls Village</strong>.
         </p>
         <div class="row" style="margin-top:16px;">
-          <a class="btn ghost" href="#support">What we support</a>
+          <a class="btn ghost" href="#priorities">What we support</a>
           <a class="btn primary" href="#signup">Join the mailing list</a>
         </div>
         <div class="chips">
-          <div class="chip">Safety-first</div>
-          <div class="chip">Sidewalks & crossings</div>
-          <div class="chip">Trails & connections</div>
+          <div class="chip">Village access</div>
+          <div class="chip">Sidewalk safety</div>
+          <div class="chip">Trails & crossings</div>
         </div>
       </div>
 
       <div class="card">
-        <div style="display:flex; justify-content:space-between; gap:10px;">
-          <div>
-            <div style="font-weight:800; font-size:13px; color:var(--muted);">Our focus</div>
-            <div style="font-weight:900; font-size:22px; margin-top:4px;">Practical, safety-based progress</div>
-            <p style="margin-top:10px; color:var(--muted);">
-              Clear priorities. Calm tone. Consistent follow-through.
-            </p>
-          </div>
-          <div class="logo" style="background: linear-gradient(135deg, rgba(20,83,45,.22), rgba(30,41,59,.12));"></div>
+        <div style="font-weight:900;font-size:14px;color:#334155;">Quick explainer (copy/paste)</div>
+        <p style="margin-top:8px;color:#475569;font-size:14px;line-height:1.55;">
+          <strong>Great Falls Together</strong> is a resident-led group in <strong>Great Falls, Virginia</strong>
+          advocating for safer sidewalks, crossings, and connected paths—especially to <strong>Great Falls Village</strong>
+          and key destinations like schools and parks. We focus on practical, safety-first improvements and steady,
+          constructive engagement with Fairfax County and transportation partners.
+        </p>
+
+        <div class="badgeRow">
+          <div class="badge">Great Falls, VA</div>
+          <div class="badge gray">Fairfax County</div>
+          <div class="badge">Safety-first</div>
         </div>
 
-        <div class="card" style="margin-top:14px; background:#f8fafc;">
-          <div style="font-weight:900; font-size:14px;">What you can expect</div>
-          <ul style="margin:10px 0 0 18px; color:var(--muted); font-size:14px; line-height:1.6;">
-            <li>Short, useful updates (not spam)</li>
-            <li>Meeting reminders and action steps</li>
-            <li>Requests for resident input where it matters</li>
-          </ul>
-        </div>
-
-        <div class="card" style="margin-top:12px;">
-          <div style="font-weight:900; font-size:14px;">Contact</div>
-          <div style="margin-top:8px; font-size:14px;">
-            <a href="mailto:greatfallstogether@gmail.com" style="text-decoration:underline; color:var(--text);">
-              greatfallstogether@gmail.com
-            </a>
-          </div>
-        </div>
+        <!-- Fairfax County official seal/crest NOTE:
+             Wikimedia flags official insignia as potentially restricted for use (even if not copyrighted).
+             We are not embedding it by default. If you later obtain permission, you can add it here.  [oai_citation:2‡Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3ASeal_of_Fairfax_County%2C_Virginia.svg?utm_source=chatgpt.com) -->
       </div>
     </section>
 
-    <!-- WHAT WE SUPPORT -->
-    <section id="support" style="padding-top:10px;">
-      <h2 class="section-title">What we support</h2>
-      <p class="section-sub">Common-sense improvements that keep Great Falls livable, safe, and connected.</p>
+    <section id="priorities">
+      <h2 class="section-title">What we support in Great Falls, Virginia</h2>
+      <p class="section-sub">
+        Common-sense improvements that make it safer to walk, bike, and drive between neighborhoods,
+        schools, parks, and <strong>Great Falls Village</strong>.
+      </p>
 
       <div class="grid">
         <div class="card pill">
           <h3>Safe sidewalks & crossings</h3>
-          <p>Fill gaps, improve crossings, and make walking safer—especially near schools and community destinations.</p>
+          <p>Close sidewalk gaps and improve crossings so residents can safely reach the Village, schools, and parks.</p>
         </div>
+
         <div class="card pill">
-          <h3>Connected trails & bike routes</h3>
-          <p>Connect neighborhoods to the Village and parks with practical, family-friendly links.</p>
+          <h3>Connected trails & paths</h3>
+          <p>Better connections between neighborhoods, trails, and community destinations—family-friendly and practical.</p>
         </div>
+
         <div class="card pill">
-          <h3>Safety-driven transportation planning</h3>
-          <p>Support improvements that reduce conflict points and make driving patterns safer and more predictable.</p>
+          <h3>Village access & safety</h3>
+          <p>Make it safer to get to Great Falls Village by foot, bike, and car—so it can function as a true community focal point.</p>
         </div>
+
         <div class="card pill">
-          <h3>Access to everyday services</h3>
-          <p>Help residents access essentials locally—without long trips for basic needs.</p>
+          <h3>Responsible transportation planning</h3>
+          <p>Support safety-driven road design that reduces conflict points and makes travel patterns more predictable.</p>
         </div>
       </div>
 
-      <!-- PHOTO SECTION (now uses stable Wikimedia image files) -->
-      <section style="margin-top:32px;">
+      <!-- Specific location: Georgetown Pike & Walker Road -->
+      <div class="card callout" style="margin-top:16px;">
+        <div style="font-weight:950;font-size:16px;">Priority safety location: Georgetown Pike & Walker Road</div>
+        <p style="margin-top:8px;color:#334155;font-size:14px;line-height:1.6;">
+          The intersection of <strong>Georgetown Pike and Walker Road</strong> is a key gateway into Great Falls and a critical
+          connection point for reaching <strong>Great Falls Village</strong>. Safer operations here—clear crossings, predictable
+          turning movements, and better separation of pedestrians from traffic—improve safety for drivers and for anyone trying
+          to walk to the Village.
+        </p>
+        <div class="badgeRow">
+          <div class="badge">Village gateway</div>
+          <div class="badge">Crash-risk reduction</div>
+          <div class="badge gray">Practical fixes first</div>
+        </div>
+      </div>
+
+      <!-- Why the Village matters -->
+      <div class="card" style="margin-top:16px;">
+        <div style="font-weight:950;font-size:16px;">Why the Village matters</div>
+        <p style="margin-top:8px;color:#334155;font-size:14px;line-height:1.65;">
+          <strong>Great Falls Village</strong> is one of the few places in our community where neighbors can naturally gather—
+          for daily needs, local businesses, community events, and a shared sense of place. When it’s safe and easy to reach
+          the Village—especially on foot—more trips become shorter, local, and predictable. That supports small businesses,
+          reduces unnecessary driving for simple errands, and strengthens community connection without changing the character
+          of Great Falls.
+        </p>
+        <ul style="margin:10px 0 0 18px;color:#475569;font-size:14px;line-height:1.65;">
+          <li><strong>Safety:</strong> fewer risky crossings and conflict points around a high-activity area</li>
+          <li><strong>Community:</strong> a true focal point for neighbors, families, and seniors</li>
+          <li><strong>Local services:</strong> easier access to everyday needs without long drives</li>
+          <li><strong>Stewardship:</strong> improvements that preserve what we love while making the community function better</li>
+        </ul>
+      </div>
+
+      <!-- Photos (Great Falls Park / Fairfax County) -->
+      <section style="margin-top:22px;">
         <div class="grid">
           <div class="card photo-card">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Great_Falls%2C_viewed_from_Virginia_side_-04-_%2850848362696%29.png/1280px-Great_Falls%2C_viewed_from_Virginia_side_-04-_%2850848362696%29.png"
               alt="Great Falls rapids viewed from the Virginia side"
+              loading="lazy"
             />
-            <p>Practical improvements help neighbors of all ages move safely and confidently.</p>
+            <p>Great Falls Park and the Potomac River are defining features of Great Falls, Virginia.</p>
           </div>
 
           <div class="card photo-card">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/2019-09-07_12_29_51_View_south_across_Difficult_Run_from_the_Difficult_Run_Trail_within_Great_Falls_Park_in_Great_Falls%2C_Fairfax_County%2C_Virginia.jpg/1280px-2019-09-07_12_29_51_View_south_across_Difficult_Run_from_the_Difficult_Run_Trail_within_Great_Falls_Park_in_Great_Falls%2C_Fairfax_County%2C_Virginia.jpg"
-              alt="Difficult Run Trail within Great Falls Park"
+              alt="Difficult Run Trail within Great Falls Park in Fairfax County, Virginia"
+              loading="lazy"
             />
-            <p>Thoughtful planning strengthens community without changing what people love.</p>
+            <p>Trails and natural assets in Fairfax County connect neighborhoods—when access is safe and continuous.</p>
           </div>
         </div>
       </section>
     </section>
 
-    <!-- CTA -->
     <section id="signup" class="cta">
-      <div style="display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;">
-        <div>
-          <div style="font-size:28px; font-weight:950; letter-spacing:-.01em;">Get updates</div>
-          <p>Join the mailing list for short updates, meeting reminders, and clear ways to help.</p>
-        </div>
-      </div>
+      <div style="font-size:28px;font-weight:950;letter-spacing:-.01em;">Get updates</div>
+      <p>Join neighbors across Great Falls, Virginia who support safer streets and a stronger Village.</p>
 
-      <!-- Simple email capture: opens an email to you -->
-      <form onsubmit="window.location.href='mailto:greatfallstogether@gmail.com?subject=Sign%20me%20up%20for%20updates&body=Name:%20%0AEmail:%20'; return false;">
+      <form onsubmit="window.location.href='mailto:greatfallstogether@gmail.com?subject=Sign%20me%20up%20for%20updates&body=Name:%20%0AEmail:%20%0ANeighborhood%20(optional):%20'; return false;">
         <div class="row">
           <input type="email" placeholder="Email address" required />
           <button type="submit">Sign up</button>
         </div>
       </form>
 
-      <div style="margin-top:10px; font-size:12px; color: rgba(255,255,255,.80);">
+      <div style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.80);">
         Prefer email? Write us at
-        <a href="mailto:greatfallstogether@gmail.com" style="color:#fff; text-decoration:underline;">
-          greatfallstogether@gmail.com
-        </a>.
+        <a href="mailto:greatfallstogether@gmail.com" style="color:#fff;text-decoration:underline;">greatfallstogether@gmail.com</a>.
       </div>
     </section>
 
-    <div class="foot">
-      <div>© <span id="y"></span> Great Falls Together</div>
+    <footer class="foot">
+      <div>© <span id="y"></span> Great Falls Together • Great Falls, Virginia</div>
       <div class="links">
-        <a href="#support">What we support</a>
+        <a href="#priorities">What we support</a>
         <a href="#signup">Get updates</a>
       </div>
+    </footer>
 
-      <!-- Photo credits (keeps you clean legally) -->
-      <div class="credits">
-        Photo credits:
-        Hero image (Public Domain, NPS / Great Falls Park). 
-        Rapids photo: Ben Schumin (CC BY-SA 2.0). 
-        Trail photo: Famartin (CC BY-SA 4.0).
-        Sources & licenses: 
-        <a href="https://commons.wikimedia.org/wiki/File:Two_Views_of_Waterfalls_and_Rapids_at_Great_Falls_Park,_Virginia_(4f6dd8a5-9ff6-4a59-9b65-87ab30762493).jpg" target="_blank" rel="noreferrer">Hero</a>,
-        <a href="https://commons.wikimedia.org/wiki/File:Great_Falls,_viewed_from_Virginia_side_-04-_(50848362696).png" target="_blank" rel="noreferrer">Rapids</a>,
-        <a href="https://commons.wikimedia.org/wiki/File:2019-09-07_12_29_51_View_south_across_Difficult_Run_from_the_Difficult_Run_Trail_within_Great_Falls_Park_in_Great_Falls,_Fairfax_County,_Virginia.jpg" target="_blank" rel="noreferrer">Trail</a>.
-      </div>
+    <div class="credits">
+      Virginia flag image is public domain on Wikimedia Commons.  [oai_citation:3‡Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3AFlag_of_Virginia.svg?utm_source=chatgpt.com)
+      Note: Fairfax County official seal/crest may be subject to official insignia use restrictions.  [oai_citation:4‡Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3ASeal_of_Fairfax_County%2C_Virginia.svg?utm_source=chatgpt.com)
     </div>
-  </div>
+  </main>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
