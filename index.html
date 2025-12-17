@@ -75,10 +75,10 @@
       border: 1px solid var(--border);
       box-shadow: 0 2px 8px rgba(0,0,0,.04);
 
-      /* NEW HERO IMAGE (Great Falls-style rapids / waterfall) */
+      /* HERO IMAGE (Public Domain NPS – stable direct file) */
       background:
         linear-gradient(rgba(15,23,42,.58), rgba(15,23,42,.58)),
-        url('https://source.unsplash.com/CSrdIaGufAY/1600x900');
+        url('https://upload.wikimedia.org/wikipedia/commons/c/cd/Two_Views_of_Waterfalls_and_Rapids_at_Great_Falls_Park%2C_Virginia_%284f6dd8a5-9ff6-4a59-9b65-87ab30762493%29.jpg');
       background-size: cover;
       background-position: center;
 
@@ -133,10 +133,14 @@
     .section-title { font-size:28px; margin: 22px 0 0; letter-spacing: -.01em; }
     .section-sub { max-width:680px; color: var(--muted); }
 
-    .photo-card img {
+    /* Photo cards */
+    .photo-card img{
       width:100%;
+      height: 260px;
+      object-fit: cover;
       border-radius:16px;
       display:block;
+      background: #f1f5f9;
     }
     .photo-card p { margin-top:10px; font-size:14px; }
 
@@ -190,6 +194,15 @@
       flex-wrap:wrap;
     }
     .links a { color: var(--muted); text-decoration: underline; margin-left: 10px; }
+
+    .credits {
+      width: 100%;
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .credits a { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -283,22 +296,21 @@
         </div>
       </div>
 
-      <!-- PHOTO SECTION (NEW IMAGES) -->
+      <!-- PHOTO SECTION (now uses stable Wikimedia image files) -->
       <section style="margin-top:32px;">
         <div class="grid">
           <div class="card photo-card">
-            <!-- Great Falls Park-tagged river/trees image -->
             <img
-              src="https://source.unsplash.com/KyQ1EGUo94o/1200x800"
-              alt="River and trees at Great Falls Park"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Great_Falls%2C_viewed_from_Virginia_side_-04-_%2850848362696%29.png/1280px-Great_Falls%2C_viewed_from_Virginia_side_-04-_%2850848362696%29.png"
+              alt="Great Falls rapids viewed from the Virginia side"
             />
             <p>Practical improvements help neighbors of all ages move safely and confidently.</p>
           </div>
+
           <div class="card photo-card">
-            <!-- Small-town main street vibe -->
             <img
-              src="https://source.unsplash.com/nsJMV5dIRXY/1200x800"
-              alt="A calm, walkable main street"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/2019-09-07_12_29_51_View_south_across_Difficult_Run_from_the_Difficult_Run_Trail_within_Great_Falls_Park_in_Great_Falls%2C_Fairfax_County%2C_Virginia.jpg/1280px-2019-09-07_12_29_51_View_south_across_Difficult_Run_from_the_Difficult_Run_Trail_within_Great_Falls_Park_in_Great_Falls%2C_Fairfax_County%2C_Virginia.jpg"
+              alt="Difficult Run Trail within Great Falls Park"
             />
             <p>Thoughtful planning strengthens community without changing what people love.</p>
           </div>
@@ -336,6 +348,18 @@
       <div class="links">
         <a href="#support">What we support</a>
         <a href="#signup">Get updates</a>
+      </div>
+
+      <!-- Photo credits (keeps you clean legally) -->
+      <div class="credits">
+        Photo credits:
+        Hero image (Public Domain, NPS / Great Falls Park). 
+        Rapids photo: Ben Schumin (CC BY-SA 2.0). 
+        Trail photo: Famartin (CC BY-SA 4.0).
+        Sources & licenses: 
+        <a href="https://commons.wikimedia.org/wiki/File:Two_Views_of_Waterfalls_and_Rapids_at_Great_Falls_Park,_Virginia_(4f6dd8a5-9ff6-4a59-9b65-87ab30762493).jpg" target="_blank" rel="noreferrer">Hero</a>,
+        <a href="https://commons.wikimedia.org/wiki/File:Great_Falls,_viewed_from_Virginia_side_-04-_(50848362696).png" target="_blank" rel="noreferrer">Rapids</a>,
+        <a href="https://commons.wikimedia.org/wiki/File:2019-09-07_12_29_51_View_south_across_Difficult_Run_from_the_Difficult_Run_Trail_within_Great_Falls_Park_in_Great_Falls,_Fairfax_County,_Virginia.jpg" target="_blank" rel="noreferrer">Trail</a>.
       </div>
     </div>
   </div>
