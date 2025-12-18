@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Great Falls Together | Great Falls, Virginia</title>
-  <meta name="description" content="Great Falls Together is a resident-led group in Great Falls, Virginia focused on safer streets, sidewalks, trails, and a stronger Great Falls Village." />
+  <meta name="description" content="Great Falls Together is a resident-led group in Great Falls, Virginia focused on safer sidewalks, crossings, connected paths, and access to Great Falls Village." />
 
   <style>
     :root {
@@ -12,6 +12,7 @@
       --card:#ffffff;
       --text:#0f172a;
       --muted:#475569;
+      --muted2:#64748b;
       --border:#e2e8f0;
 
       /* Great Falls theme */
@@ -27,7 +28,6 @@
       background:linear-gradient(var(--bg), #fff, var(--bg));
       color:var(--text);
     }
-
     a { color: inherit; }
 
     .wrap { max-width: 980px; margin: 0 auto; padding: 18px; }
@@ -60,10 +60,26 @@
         linear-gradient(135deg, rgba(20,83,45,.18), rgba(30,41,59,.10));
       flex: 0 0 auto;
     }
-
     .brandText { min-width:0; }
-    .title { font-weight:900; font-size:14px; line-height:1.1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .tag { font-size:12px; color:var(--muted); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:flex; gap:8px; align-items:center; }
+    .title {
+      font-weight:900;
+      font-size:14px;
+      line-height:1.1;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .tag {
+      font-size:12px;
+      color:var(--muted);
+      margin-top:2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
     .vaFlag {
       height: 14px;
       width: auto;
@@ -95,7 +111,6 @@
       border: 1px solid var(--border);
       box-shadow: 0 2px 8px rgba(0,0,0,.04);
 
-      /* Great Falls Park hero image (Wikimedia) */
       background:
         linear-gradient(rgba(15,23,42,.62), rgba(15,23,42,.62)),
         url('https://upload.wikimedia.org/wikipedia/commons/c/cd/Two_Views_of_Waterfalls_and_Rapids_at_Great_Falls_Park%2C_Virginia_%284f6dd8a5-9ff6-4a59-9b65-87ab30762493%29.jpg');
@@ -149,18 +164,7 @@
     .pill h3 { margin:0; font-size: 16px; }
     .pill p { margin-top:6px; font-size: 14px; color: var(--muted); }
 
-    /* Photo cards */
-    .photo-card img{
-      width:100%;
-      height: 240px;
-      object-fit: cover;
-      border-radius:16px;
-      display:block;
-      background:#f1f5f9;
-    }
-    .photo-card p { margin-top:10px; font-size:14px; }
-
-    /* Village explainer */
+    /* Village / location callouts */
     .callout {
       border: 1px solid rgba(20,83,45,.18);
       background: linear-gradient(180deg, rgba(220,252,231,.6), rgba(255,255,255,.95));
@@ -168,7 +172,7 @@
     .badgeRow { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
     .badge {
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 900;
       color: #14532d;
       background: rgba(220,252,231,.7);
       border: 1px solid rgba(20,83,45,.18);
@@ -181,7 +185,18 @@
       border:1px solid var(--border);
     }
 
-    /* CTA */
+    /* Photos */
+    .photo-card img{
+      width:100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius:16px;
+      display:block;
+      background:#f1f5f9;
+    }
+    .photo-card p { margin-top:10px; font-size:14px; color: var(--muted); }
+
+    /* Signup section */
     .cta {
       margin: 26px 0 10px;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
@@ -192,30 +207,12 @@
       box-shadow: 0 2px 10px rgba(0,0,0,.08);
     }
     .cta p { color: rgba(255,255,255,.85); margin-top:8px; }
-    .row { display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px; }
-    input {
-      flex: 1;
-      min-width: 220px;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.25);
-      background: rgba(255,255,255,.12);
-      color:#fff;
-      font-size:14px;
-      outline: none;
+    .smallNote {
+      margin-top: 8px;
+      font-size: 12px;
+      color: rgba(255,255,255,.82);
+      line-height: 1.4;
     }
-    input::placeholder { color: rgba(255,255,255,.70); }
-    input:focus { border-color: rgba(255,255,255,.45); }
-    button {
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: none;
-      font-weight: 900;
-      font-size: 14px;
-      background: #fff;
-      color: var(--text);
-    }
-    button:hover { opacity: .92; cursor: pointer; }
 
     /* Footer */
     .foot {
@@ -234,14 +231,19 @@
     .credits {
       margin-top: 10px;
       font-size: 12px;
-      color: var(--muted);
+      color: var(--muted2);
       line-height: 1.5;
     }
-    .credits a { text-decoration: underline; }
+    .credits a { text-decoration: underline; color: var(--muted2); }
   </style>
 </head>
 
 <body>
+  <!-- Update this once if you ever change your form -->
+  <script>
+    const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdxgFZVAPRDhmBR09lorxhjXlgDg4ZQ-qUhhawaXcWREokvag/viewform";
+  </script>
+
   <header class="top">
     <div class="wrap topbar">
       <div class="brand">
@@ -256,7 +258,10 @@
           </div>
         </div>
       </div>
-      <a class="btn primary" href="#signup">Get updates</a>
+
+      <a class="btn primary" href="#" onclick="window.open(FORM_URL,'_blank','noopener'); return false;">
+        Sign up for updates
+      </a>
     </div>
   </header>
 
@@ -265,14 +270,22 @@
       <div>
         <h1>A safer, more connected Great Falls, Virginia—built together.</h1>
         <p>
-          Great Falls Together is a resident-led community group in <strong>Great Falls, Virginia</strong>,
-          focused on practical improvements that help families, seniors, and neighbors of all ages move safely between
-          neighborhoods, schools, parks, and <strong>Great Falls Village</strong>.
+          Great Falls Together is a resident-led community group in <strong>Great Falls, Virginia</strong>, focused on
+          practical improvements that help families, seniors, and neighbors of all ages move safely between neighborhoods,
+          schools, parks, and <strong>Great Falls Village</strong>.
         </p>
-        <div class="row" style="margin-top:16px;">
+
+        <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn ghost" href="#priorities">What we support</a>
-          <a class="btn primary" href="#signup">Join the mailing list</a>
+          <a class="btn primary" href="#" onclick="window.open(FORM_URL,'_blank','noopener'); return false;">
+            Sign up for updates
+          </a>
         </div>
+
+        <div style="margin-top:8px; font-size:12px; color: rgba(255,255,255,.85);">
+          Short, occasional updates. No spam. No fundraising emails.
+        </div>
+
         <div class="chips">
           <div class="chip">Village access</div>
           <div class="chip">Sidewalk safety</div>
@@ -295,9 +308,12 @@
           <div class="badge">Safety-first</div>
         </div>
 
-        <!-- Fairfax County official seal/crest NOTE:
-             Wikimedia flags official insignia as potentially restricted for use (even if not copyrighted).
-             We are not embedding it by default. If you later obtain permission, you can add it here.  [oai_citation:2‡Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3ASeal_of_Fairfax_County%2C_Virginia.svg?utm_source=chatgpt.com) -->
+        <div style="margin-top:10px; font-size:12px; color:#64748b; line-height:1.4;">
+          We respect your time: we send only high-signal emails when there’s something concrete to share or when resident input matters.
+        </div>
+
+        <!-- Fairfax County crest/seal note:
+             Official seals often have use restrictions. If you later obtain permission, you can add it here. -->
       </div>
     </section>
 
@@ -348,7 +364,7 @@
 
       <!-- Why the Village matters -->
       <div class="card" style="margin-top:16px;">
-        <div style="font-weight:950;font-size:16px;">Why the Village matters</div>
+        <div style="font-weight:950;font-size:16px;">Why Great Falls Village matters</div>
         <p style="margin-top:8px;color:#334155;font-size:14px;line-height:1.65;">
           <strong>Great Falls Village</strong> is one of the few places in our community where neighbors can naturally gather—
           for daily needs, local businesses, community events, and a shared sense of place. When it’s safe and easy to reach
@@ -364,7 +380,7 @@
         </ul>
       </div>
 
-      <!-- Photos (Great Falls Park / Fairfax County) -->
+      <!-- Photos (stable Wikimedia files) -->
       <section style="margin-top:22px;">
         <div class="grid">
           <div class="card photo-card">
@@ -388,20 +404,16 @@
       </section>
     </section>
 
-    <section id="signup" class="cta">
-      <div style="font-size:28px;font-weight:950;letter-spacing:-.01em;">Get updates</div>
+    <section class="cta">
+      <div style="font-size:28px;font-weight:950;letter-spacing:-.01em;">Sign up for updates</div>
       <p>Join neighbors across Great Falls, Virginia who support safer streets and a stronger Village.</p>
 
-      <form onsubmit="window.location.href='mailto:greatfallstogether@gmail.com?subject=Sign%20me%20up%20for%20updates&body=Name:%20%0AEmail:%20%0ANeighborhood%20(optional):%20'; return false;">
-        <div class="row">
-          <input type="email" placeholder="Email address" required />
-          <button type="submit">Sign up</button>
-        </div>
-      </form>
+      <a class="btn primary" href="#" onclick="window.open(FORM_URL,'_blank','noopener'); return false;" style="margin-top:10px;">
+        Sign up for updates
+      </a>
 
-      <div style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.80);">
-        Prefer email? Write us at
-        <a href="mailto:greatfallstogether@gmail.com" style="color:#fff;text-decoration:underline;">greatfallstogether@gmail.com</a>.
+      <div class="smallNote">
+        Short, occasional updates about safety and access in Great Falls, Virginia. No spam. No fundraising. Unsubscribe anytime.
       </div>
     </section>
 
@@ -409,16 +421,18 @@
       <div>© <span id="y"></span> Great Falls Together • Great Falls, Virginia</div>
       <div class="links">
         <a href="#priorities">What we support</a>
-        <a href="#signup">Get updates</a>
+        <a href="#" onclick="window.open(FORM_URL,'_blank','noopener'); return false;">Sign up</a>
       </div>
     </footer>
 
     <div class="credits">
-      Virginia flag image is public domain on Wikimedia Commons.  [oai_citation:3‡Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3AFlag_of_Virginia.svg?utm_source=chatgpt.com)
-      Note: Fairfax County official seal/crest may be subject to official insignia use restrictions.  [oai_citation:4‡Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3ASeal_of_Fairfax_County%2C_Virginia.svg?utm_source=chatgpt.com)
+      Virginia flag image: Wikimedia Commons. Photos: Wikimedia Commons (Great Falls Park / Difficult Run).
+      If you later want to add the official Fairfax County crest/seal, do it only after confirming permitted use.
     </div>
   </main>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
